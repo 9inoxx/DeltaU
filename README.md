@@ -48,7 +48,11 @@ tear_sheet.display_report()
 
 Copy and paste: pip install nbformat>=4.2.0 into your envrionment, restart the environment and than re-run the code.
 
-# DeltaU mainly utilizes dataframes for trade simulation, each must contain Date, Open, High, Low, Close, Adj Close, Volume. 
+**Note**: Ensure your CSV data includes the following columns: 
+- `Date`: The trading date (ensure it’s in a recognizable datetime format).
+- `Open`, `High`, `Low`, `Close`: Standard OHLC prices for each trading day.
+- `Adj Close`: Adjusted close price accounting for corporate actions like splits/dividends.
+- `Volume`: Trading volume for the day.
 
 # I've tried my best to make things as simple as calling strategy = ExampleStrategy(window=self.window) executor = Executor(initial_capital=600, share_size=10) backtester = Backtester(strategy=strategy, executor=executor, data=data)>
 
